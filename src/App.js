@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Form from './Form';
 import './App.css';
+const flexiConfig = {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+items: [{
+
+  "name": "person_name",
+
+  "label": "Person's Name",
+
+  "type": "TextField",
+
+  "values":"",
+
+  }, {
+
+  "name": "states",
+
+  "label": "Person's state",
+
+  "type": "DropDown",
+
+  "values": [
+
+                 "Maharashtra",
+
+                 "Kerala",
+
+                 "Tamil Nadu"
+
+  ]}
+]
+
+};
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      flexiConfig: ''
+    };
+  }
+ 
+
+  render() {
+    return (
+      <div>
+     
+        <Form flexiConfig={flexiConfig}/>
+      </div>
+    );
+  }
 }
+
 
 export default App;
